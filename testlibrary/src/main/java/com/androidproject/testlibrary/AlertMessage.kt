@@ -9,7 +9,7 @@ import android.widget.Toast
 
 object AlertMessage {
 
-    fun showAlertDialogMessage(context : Context, title : String, message : String, context1: Class<out Any>, onPositiveClickCallback : () -> Unit){
+    fun showAlertDialogMessage(context : Context, title : String, message : String, onPositiveClickCallback : () -> Unit){
 
         AlertDialog.Builder(context)
             .setTitle(title)
@@ -17,8 +17,6 @@ object AlertMessage {
             .setPositiveButton("yes", DialogInterface.OnClickListener{
                     _, _ ->
                 Toast.makeText(context,"Successfully clicked the data",Toast.LENGTH_SHORT).show()
-                val intent = Intent(context,context1::class.java)
-                context.startActivity(intent)
                 onPositiveClickCallback.invoke()
             })
             .show()
