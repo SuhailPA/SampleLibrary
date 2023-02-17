@@ -9,7 +9,7 @@ import android.widget.Toast
 
 object AlertMessage {
 
-    fun showAlertDialogMessage(context : Context, title : String, message : String, context1: Activity, onPositiveClickCallback : () -> Unit){
+    fun showAlertDialogMessage(context : Context, title : String, message : String, context1: Context, onPositiveClickCallback : () -> Unit){
 
         AlertDialog.Builder(context)
             .setTitle(title)
