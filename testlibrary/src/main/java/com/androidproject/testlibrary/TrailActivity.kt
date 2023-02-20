@@ -9,6 +9,12 @@ import com.androidproject.testlibrary.databinding.ActivityTrailBinding
 
 class TrailActivity : AppCompatActivity() {
     lateinit var binding : ActivityTrailBinding
+
+    lateinit var interfaceTest : TestInterface
+    fun doSomething(){
+        val data  = interfaceTest.getDataOnMuteButtonClick()
+        interfaceTest.onMuteButtonClickEvent(data)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTrailBinding.inflate(layoutInflater)
@@ -17,6 +23,7 @@ class TrailActivity : AppCompatActivity() {
             binding.newText.text = "New Text Updated 1"
             Toast.makeText(this,"ButtonClicked",Toast.LENGTH_SHORT).show()
         }
+
 
     }
 }
