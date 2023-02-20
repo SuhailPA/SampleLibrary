@@ -14,6 +14,7 @@ class TrailActivity : AppCompatActivity() {
     fun doSomething(){
         val data  = interfaceTest.getDataOnMuteButtonClick()
         interfaceTest.onMuteButtonClickEvent(data)
+        Toast.makeText(this,data,Toast.LENGTH_SHORT).show()
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
