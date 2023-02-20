@@ -1,5 +1,6 @@
 package com.androidproject.testlibrary
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -11,10 +12,11 @@ class TrailActivity : AppCompatActivity() {
     lateinit var binding : ActivityTrailBinding
 
     lateinit var interfaceTest : TestInterface
-    fun doSomething(){
+    fun doSomething(context: Context){
         val data  = interfaceTest.getDataOnMuteButtonClick()
         interfaceTest.onMuteButtonClickEvent(data)
-        binding.testButton.text = data
+        Toast.makeText(context,data,Toast.LENGTH_SHORT).show()
+
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
